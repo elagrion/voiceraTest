@@ -24,6 +24,10 @@ class CalendarModel {
 
     var lastFetchedDate = Date().dayBefore
 
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
     public var eventsCount: Int {
         get {
             return fetchedEvents.count + 1
