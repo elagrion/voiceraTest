@@ -84,6 +84,8 @@ class CalendarModel {
 
     @objc
     func storeChanged(notification: NSNotification) {
+        self.fetchedEvents = []
+        self.lastFetchedDate = Date().dayBefore
         self.delegate?.needsReloadData()
     }
     
